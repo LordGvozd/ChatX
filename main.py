@@ -8,5 +8,5 @@ app = FastAPI()
 @app.get("/")
 async def chat():
     return HTMLResponse("""
-ChatX
+ChatX v1
     """)
