@@ -1,0 +1,91 @@
+:root{
+    --background-color: #c9c9c9;
+}
+
+/* ================ New life ================= */
+
+.app{
+    display: flex;
+
+    width: 100vw;
+    height: 100vh;
+    
+}
+
+.chat-list{
+    width: 20%;
+    height: 100%;
+    background-color: rgb(81, 83, 130);
+}
+
+.chat-window{
+    width: 80%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.messages{
+    width: 100%;
+
+    max-height: 94%;
+    min-height: 70%;
+
+    display: flex;
+
+    background-color: rgb(39, 37, 68);
+
+    flex-direction: column-reverse;
+    overflow-y: scroll;
+
+    padding: 3%;
+}
+
+
+.message-other{
+    background-color: rgb(48, 33, 86);
+    margin-right: auto;
+}
+
+.message-me{
+    background-color: rgb(103, 69, 189);
+    margin-left: auto;
+}
+
+
+.message-other, .message-me{
+    margin-top: 3%;
+
+    border-radius: 7%;
+    max-width: 70%;
+
+    height: auto;
+
+    display: inline-block;
+
+    padding: 2%;
+
+    color: rgb(168, 168, 168);
+}
+
+
+.send-message-window{
+    width: 100%;
+
+    max-height: 30%;
+    min-height: 6%;
+
+    display: flex;
+}
+
+.message-input{
+    width: 80%;
+
+    height: 100%;
+}
+
+.send-button{
+    width: 20%;
+}
+
