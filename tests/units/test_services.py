@@ -75,3 +75,40 @@ def test_get_messages():
 
     for i in range(30):
         assert chat_service.get_messages(1)[i].text == str(i)
+
+
+def test_add_chat_member():
+    repo = InMemoryRepo()
+    chat = get_base_chat()
+    repo.save_chat_state(chat)
+
+    chat_service = ChatService(repo)
+
+    chat_service.add_member_to_chat(chat_id=1, user=User(id=11, name="User11"))
+
+    assert repo.load_chat(1).members[10].id == 11
+
+
+def test_add_chat_member_already_exist():
+    repo = InMemoryRepo()
+    chat = get_base_chat()
+    repo.save_chat_state(chat)
+
+    chat_service = ChatService(repo)
+
+    with pytest.raises(UserAlreadyInChat):
+        chat_service.add_member_to_chat(chat_id=1, user=User(id=1, name="User11"))
+
+
+def test_add_chat_member_chat_not_found():
+    repo = InMemoryRepo()
+    chat = get_base_chat()
+    repo.save_chat_state(chat)
+
+    chat_service = ChatService(repo)
+
+    with pytest.raises(ChatNotFound):
+        chat_service.add_member_to_chat(chat_id=1110, user=User(id=11, name="User11"))
+
+
+

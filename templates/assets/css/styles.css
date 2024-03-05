@@ -1,8 +1,7 @@
 :root{
     --background-color: #c9c9c9;
+    --accent-color: #00000;
 }
-
-/* ================ New life ================= */
 
 .app{
     display: flex;
@@ -38,6 +37,7 @@
 
     flex-direction: column-reverse;
     overflow-y: scroll;
+
 
     padding: 3%;
 }
@@ -88,5 +88,71 @@
 
 .send-button{
     width: 20%;
+}
+
+.overlay-bg{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 5; 
+
+}
+
+.overlay-box-container{
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    margin-left: auto;
+
+    z-index: 10;
+
+
+    display: flex;
+
+    justify-items: center;
+    justify-content: center;
+
+    align-items: center;
+
+    
+
+}
+
+
+.overlay-box{
+    background-color: rgb(231, 231, 231);
+
+    width: 30%;
+    height: 70%;
+
+    border-radius: 5%;
+
+    padding: 2%;
+
+    display: flex;
+}
+
+
+.input-box{
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+    justify-items: center;
+
+    align-items: center;
+
+    
 }
 

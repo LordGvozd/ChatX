@@ -10,6 +10,10 @@ class UserNotInChatError(ChatError):
     ...
 
 
+class UserAlreadyInChat(ChatError):
+    ...
+
+
 class User(BaseModel):
     id: int
     name: str
@@ -36,6 +40,8 @@ class Chat:
         self.__messages.append(message)
 
     def add_member(self, user: User):
+        if user.id in [u.id for u in self.__members]:
+            raise UserAlreadyInChat
         self.__members.append(user)
 
     @property
